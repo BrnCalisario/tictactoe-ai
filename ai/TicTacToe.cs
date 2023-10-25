@@ -1,3 +1,5 @@
+using System.Text;
+
 public struct TicTacToe
 {
     ushort playerOneInfo;
@@ -9,13 +11,13 @@ public struct TicTacToe
 
     public (byte x, byte y) LastMove;
 
-    byte winner;
+    public byte winner;
 
     public readonly bool PlayerOneTurn
         => playerTurn == 0;
 
     public readonly bool GameEnded
-        => winner != 0;
+        => winner < 2;
         
 
     public void Pass()
@@ -32,7 +34,7 @@ public struct TicTacToe
             playerTwoInfo = 0,
             playerTwoPoints = 0,
             playerTurn = 0,
-            winner = 0,
+            winner = 2,
             LastMove = (0, 0)
         };
     }
@@ -83,7 +85,7 @@ public struct TicTacToe
 
     public void VerifyWin()
     {
-        var gamePoints = playerTurn == 1 ? playerOnePoints : playerTwoPoints;
+        var gamePoints = playerTurn == 0 ? playerOnePoints : playerTwoPoints;
 
         for(int i = 0; i >= 6; i+=3)
         {
@@ -110,5 +112,38 @@ public struct TicTacToe
                 this.winner = playerTurn;
             }
         }
+    }
+
+
+    private string GetSymbol(int index)
+    {
+        if((playerOneInfo & (u << index)) > 0)
+            return " X ";
+        else if ((playerTwoInfo & (u << index)) > 0)
+            return " O ";
+        
+        return "   ";
+    }
+
+    public override string ToString()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        for(int i = 0; i < 9; i++)
+        {
+            sb.Append(this.GetSymbol(i));
+
+            if((i % 3) != 2)
+            {
+                sb.Append("|");
+                continue;
+            }
+
+            if((i / 3) != 2)
+                sb.Append("\n───────────\n");
+        }
+
+
+        return sb.ToString();
     }
 }
