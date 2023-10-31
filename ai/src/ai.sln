@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tic-tac-toe-ia", "tic-tac-t
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{76D596CA-79B3-4AD3-8DC1-8DBBBC04E875}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fight", "fight\fight.csproj", "{AE4F4A25-CF7A-4FB5-BD21-7BF0A18525AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{76D596CA-79B3-4AD3-8DC1-8DBBBC04E875}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76D596CA-79B3-4AD3-8DC1-8DBBBC04E875}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76D596CA-79B3-4AD3-8DC1-8DBBBC04E875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE4F4A25-CF7A-4FB5-BD21-7BF0A18525AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE4F4A25-CF7A-4FB5-BD21-7BF0A18525AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE4F4A25-CF7A-4FB5-BD21-7BF0A18525AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE4F4A25-CF7A-4FB5-BD21-7BF0A18525AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
